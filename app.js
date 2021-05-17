@@ -8,10 +8,20 @@ function app(state, update, view){
         const {table} = currentView
         console.clear
         console.log
-        if (view>3){
-            break
+        printTable(table)
+        const {input} = await listForm(model)
+        const updatedModel = update(input, model)
+        state = {
+            state,
+            model: updatedModel,
+            currentView: view(updatedModel)
         }
     }
+}
 
+const state = {
+    model: initModel,
+    currentView: view(initModel)
+}
 
 app(state, update, view)
