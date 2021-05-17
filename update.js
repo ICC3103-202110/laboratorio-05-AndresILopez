@@ -4,3 +4,10 @@ function tip(billAmount, percentage){
 function total(billAmount){
     return billAmount+tip(billAmount, percentage)
 }
+function update(input, model){
+
+}
+
+module.exports = {
+    update
+}

@@ -16,15 +16,24 @@ function getTable(model){
     ]
 }
 function inputForm(model){
-    
+    const {input} = model
+    const message = 'bill amount?'
+    return inquirer.prompt([
+        {
+            name: 'input',
+            type: 'input',
+            message: message,
+            default: input
+}
+    ])
+}
+function listForm(model){
+
 }
 function view(model){
     return {
         table: getTable(model)
     }
-}
-function listForm(model){
-    
 }
 module.exports = {
     getTable,
