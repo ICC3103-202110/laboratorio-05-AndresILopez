@@ -1,11 +1,35 @@
 import inquirer from "inquirer"
 
+initModel = {
+    billAmount: 0,
+    percentage: '+',
+    tip:0,
+    total:0
+}
+
 function getTable(model){
-    const billAmount = 0
-    const percentage = "+"
-    const tip = 0
-    const total = 0
     return[
         {billAmount: billAmount},
+        {"tip(%)": percentage},
+        {tip: tip},
+        {total: total}
     ]
+}
+function inputForm(model){
+    
+}
+function view(model){
+    return {
+        table: getTable(model)
+    }
+}
+function listForm(model){
+    
+}
+module.exports = {
+    getTable,
+    inputForm,
+    view,
+    initModel,
+    listform
 }
